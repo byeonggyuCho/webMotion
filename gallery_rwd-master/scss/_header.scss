@@ -1,0 +1,59 @@
+header {
+	width: 400px;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: linear-gradient(45deg, aqua, royalblue);
+
+	h1 {
+		font: bold 50px/1 "orbitron";
+		color: #fff;
+		letter-spacing: 1px;
+		position: absolute;
+		left: 20%;
+		top: 50%;
+		transform: translateY(-200%);
+
+		&::before {
+			content: "UI/UX DEVELOPMENT";
+			font: 14px/1 "orbitron";
+			color: #fff;
+			letter-spacing: 2px;
+			position: absolute;
+			left: 0px;
+			top: 140px;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			width: 130px;
+			height: 2px;
+			background: #fff;
+			margin-top: 20px;
+		}
+	}
+
+    ul {
+        position: absolute;
+        left: 60px;
+        bottom: 100px;
+
+        li {
+            float: left;
+            margin-right: 10px;
+
+            a {
+                font-size: 20px; 
+                color: #fff;
+
+                span {
+                    display: inline-block;
+                    transform: scale(0.7); 
+                    transform-origin: left center;
+                }
+            }
+        }
+    }
+}

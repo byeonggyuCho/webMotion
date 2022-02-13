@@ -1,0 +1,276 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(25deg, violet, pink);
+}
+figure h1 {
+  position: absolute;
+  top: 7vh;
+  left: 4vw;
+  font-size: 0;
+}
+figure h1 strong {
+  font: bold 36px/1.4 "arial";
+  color: #fff;
+  letter-spacing: 1px;
+}
+figure h1 span {
+  font: 12px/1 "arial";
+  color: #fff;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+figure .menu {
+  position: absolute;
+  top: 8vh;
+  right: 4vw;
+  font-size: 24px;
+  color: #fff;
+}
+figure section {
+  width: 20vw;
+  height: 65vh;
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  margin-left: -10vw;
+  margin-top: -32vh;
+  transition: 1s;
+}
+figure section article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+figure section article .inner {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 5vh 2.5vw 8vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.6;
+  transform: scale(0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  transition: 1s;
+}
+figure section article .inner .pic {
+  width: 15vw;
+  height: 15vw;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: -9999px -9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure section article .inner .pic::before, figure section article .inner .pic::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: inherit;
+}
+figure section article .inner .pic::before {
+  transform: translateY(10%);
+  filter: blur(20px) brightness(160%);
+}
+figure section article .inner .pic .dot {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  z-index: 3;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+figure section article .inner .txt {
+  width: 100%;
+  text-align: center;
+}
+figure section article .inner .txt h2 {
+  font: bold 20px/1 "arial";
+  color: #222;
+  margin-bottom: 2vh;
+}
+figure section article .inner .txt p {
+  font: 14px/1.2 "arial";
+  color: #777;
+  margin-bottom: 3vh;
+}
+figure section article .inner .txt ul {
+  display: flex;
+  justify-content: space-around;
+}
+figure section article .inner .txt ul li {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+figure section article .inner .txt ul li.play {
+  transform: scale(1.5);
+  opacity: 0.9;
+}
+figure section article .inner .txt ul li:hover {
+  transform: scale(1.5);
+  opacity: 0.8;
+}
+figure section article .inner .txt ul li:hover.play {
+  transform: scale(2);
+  opacity: 1;
+}
+figure section article.on .inner {
+  opacity: 1;
+  transform: scale(1);
+}
+figure .btnPrev {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20vw, -50%);
+  display: flex;
+  cursor: pointer;
+  font-size: 0;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+figure .btnPrev span {
+  font: 11px/1 "arial";
+  color: #fff;
+  opacity: 1;
+  transition: 0.5s;
+}
+figure .btnPrev::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+figure .btnPrev::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+figure .btnPrev:hover span {
+  transform: translateX(100%);
+  opacity: 0;
+}
+figure .btnPrev:hover::before {
+  transform: rotate(-30deg);
+}
+figure .btnPrev:hover::after {
+  transform: rotate(30deg);
+}
+figure .btnNext {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(20vw, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  font-size: 0;
+  padding-right: 20px;
+}
+figure .btnNext span {
+  font: 11px/1 "arial";
+  color: #fff;
+  transition: 0.5s;
+}
+figure .btnNext::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+figure .btnNext::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+figure .btnNext:hover span {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+figure .btnNext:hover::before {
+  transform: rotate(30deg);
+}
+figure .btnNext:hover::after {
+  transform: rotate(-30deg);
+}
+figure > p {
+  position: absolute;
+  bottom: 7vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 12px/1 "arial";
+  color: #fff;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=style.css.map */
